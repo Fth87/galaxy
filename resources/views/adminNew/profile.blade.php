@@ -47,9 +47,9 @@
                                                         <li style="margin-bottom:5px;">Setelah verifikasi pembayaran maka
                                                             akan di verifikasi oleh admin dibawah ini,silahkan tunggu
                                                             maksimal 3x24 jam, jika belum silahkan hubungi admin</li>
-                                                        <li style="margin-bottom:5px;">Lolos doang kagak bayar awkoakokw,
+                                                        {{-- <li style="margin-bottom:5px;">Lolos doang kagak bayar awkoakokw,
                                                             bayar dong, lomba aja dibayar, buat web keren kek gini kgk :(
-                                                        </li>
+                                                        </li> --}}
                                                     </ol>
                                             </div>
                                         </div>
