@@ -119,7 +119,7 @@
                                     {{ auth()->user()->nama }}
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ url('dashboard') }}"><svg
+                                    <li><a class="dropdown-item" href="{{ url('dashboard/profile') }}"><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-layout-text-window-reverse"
                                                 viewBox="0 0 16 16">
