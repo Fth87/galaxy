@@ -69,11 +69,17 @@
                     <ol class="list opacity-70" style="color: hsl(218, 81%, 85%)">
                         <li style="margin-bottom:5px;">peserta mengisi formulir yang telah disediakan dengan baik dan benar.
                         </li>
-                        <li style="margin-bottom:5px;">link twibbon : <a
-                                href="http://twb.nz/olimpiadegalaxy">http://twb.nz/olimpiadegalaxy</a></li>
-                        <li style="margin-bottom:5px;">Password akan digunakan pada saat log in website ujian online</li>
-                        <li style="margin-bottom:5px;">untuk bagian nomor telepon peserta diharapkan memberikan nomor
-                            Whatsapp yang aktif atau masih digunakan.
+                        <li style="margin-bottom:5px;">Pastikan nomor WhatsApp yang dicantumkan masih digunakan/aktif
+                        </li>
+                        <li style="margin-bottom:5px;">Pastikan juga alamat e-mail dan password benar karena akan
+                            digunakan untuk login pada akun Galaxy dan website ujian online
+                        </li>
+                        <li style="margin-bottom:5px;">Bagi yang belum membuat twibbon Galaxy,dapat mengunjungi link berikut
+                            <a href="http://twb.nz/olimpiadegalaxy">http://twb.nz/olimpiadegalaxy</a>
+                        </li>
+                        {{-- <li style="margin-bottom:5px;">Password akan digunakan pada saat log in website ujian online</li> --}}
+                        {{-- <li style="margin-bottom:5px;">untuk bagian nomor telepon peserta diharapkan memberikan nomor
+                            Whatsapp yang aktif atau masih digunakan.</li> --}}
                         <li style="margin-bottom:5px;">setelah mendaftar peserta akan diberikan link yang berupa grup untuk
                             masuk grup whatsapp.</li>
                         <li style="margin-bottom:5px;">Untuk info atau perubahan akan disampaikan melalui grub whatsapp
@@ -193,6 +199,14 @@
                                         class="form-control @error('password') is-invalid @enderror" id="password"
                                         placeholder="Password" required>
                                     <label for="password">Password</label>
+                                </div>
+                                <div class="form-floating">
+                                    <label for="password_confirmation">Konfirmasi</label>
+                                    <input type="password" class="form-control" id="password_confirmation"
+                                        name="password_confirmation" required>
+                                    @if ($errors->has('password'))
+                                        <div class="alert alert-danger">{{ $errors->first('password') }}</div>
+                                    @endif
                                 </div>
                                 <div class="form-radio">
                                     <p class="mb-0">pilih jenis kelamin</p>

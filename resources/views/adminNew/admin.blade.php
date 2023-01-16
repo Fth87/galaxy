@@ -77,7 +77,7 @@
                                         <li><a class="dropdown-item" href="{{ url('export') }}">Export</a>
                                         </li>
                                         <li class="dropdown-item ">
-                                            Import data,bilang ke admin kalau mau upload data atau update data
+                                            Import data, Untuk format & urutan di file excel tanya admin
                                             <form action="{{ url('import') }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="input-group mb-3">
@@ -85,6 +85,22 @@
                                                         name="file" aria-describedby="button-addon2">
 
                                                     <input type="submit" value="Import" class="btn btn-outline-secondary"
+                                                        type="button" id="inputGroupFileAddon04">
+                                                </div>
+
+
+                                            </form></a>
+                                        </li>
+                                        <li class="dropdown-item ">
+                                            Update data
+                                            <form action="{{ url('importUpdate') }}" method="POST"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="input-group mb-3">
+                                                    <input type="file" class="form-control " id="inputGroupFile02"
+                                                        name="file" aria-describedby="button-addon2">
+
+                                                    <input type="submit" value="Update" class="btn btn-outline-secondary"
                                                         type="button" id="inputGroupFileAddon04">
                                                 </div>
 
@@ -292,6 +308,12 @@
                                                                         <input type="text" name="email"
                                                                             id="email" class="form-control"
                                                                             value="{{ $user->email }}">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="password">password (untuk password jika
+                                                                            lupa maka harus ganti password...)</label>
+                                                                        <input type="text" name="password"
+                                                                            id="password" class="form-control">
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="nomor_peserta">Nomor peserta</label>

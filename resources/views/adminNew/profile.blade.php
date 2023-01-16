@@ -31,8 +31,8 @@
                                                     style="font-family: unset; font-size: 30px; font-weight: 500; margin-bottom:10px;">
                                                     Selamat Anda lolos!!</h2>
                                                     <ol class="list cara-daftar">
-                                                        <li style="margin-bottom:5px;">Selamat, anda lolos, Jadi harus bayar
-                                                            dong wkwkwk:)</li>
+                                                        {{-- <li style="margin-bottom:5px;">Selamat, anda lolos, Jadi harus bayar
+                                                            dong wkwkwk:)</li> --}}
                                                         <li style="margin-bottom:5px;">Saat kamu lolos, kamu akan
                                                             mendapatkan
                                                             kode untuk ditambahkan saat pembayaran.<br>
@@ -55,7 +55,8 @@
                                         </div>
                                     @elseif ($user->is_lolos == 'tidak')
                                         <div class="alert alert-danger" role="alert">
-                                            Mohon maap nih, anda ga lolos :(
+                                            Mohon maaf, anda tidak lolos seleksi </br> Semangaat… masih ada Galaxy tahun
+                                            depan yang nunggu kamu. Jangan down, tetep up kemampuan kamu.
                                         </div>
                                     @else
                                         <h6>pengumuman akan ditampilkan disini</h6>
@@ -80,6 +81,25 @@
                                         </div>
                                     @endif
 
+                                    <h5 class="card-title">Grub Whatsapp</h5>
+                                    <div class="row">
+                                        <div class="col-lg-5 col-md-4 label ">Link</div>
+                                        <div class="col-lg-7 col-md-8">
+                                            @if ($user->type = 'ipa')
+                                                <a class="" href="https://chat.whatsapp.com/Drbss8wVyOYGMHHSZPmMDX"
+                                                    role="button">https://chat.whatsapp.com/Drbss8wVyOYGMHHSZPmMDX</a>
+                                            @elseif ($user->type = 'pai')
+                                                <a class="" href="https://chat.whatsapp.com/GDloHzDr9d249i7aWF1eAJ"
+                                                    role="button">https://chat.whatsapp.com/GDloHzDr9d249i7aWF1eAJ</a>
+                                            @elseif ($user->type = 'ips')
+                                                <a class="" href="https://chat.whatsapp.com/EI7XB8hc3rk4DJWRkADlr2"
+                                                    role="button">https://chat.whatsapp.com/EI7XB8hc3rk4DJWRkADlr2</a>
+                                            @elseif ($user->type = 'inggris')
+                                                <a class="" href="https://chat.whatsapp.com/L4PfAg99MCz1iRtUWFCeCP"
+                                                    role="button">https://chat.whatsapp.com/L4PfAg99MCz1iRtUWFCeCP</a>
+                                            @endif
+                                        </div>
+                                    </div>
                                     <h5 class="card-title">Akun website E-Ujian</h5>
 
                                     <div class="row">

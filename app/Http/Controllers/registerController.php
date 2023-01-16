@@ -43,7 +43,8 @@ class registerController extends Controller
             "sekolah" => "required",
             "image" => "required|image|file|max:1024",
             "email" => "required|email:dns",
-            "password" => "required|min:6",
+            "password" => "required|min:6|confirmed",
+            'password_confirmation' => "required",
             "jk" => "required",
             "type" => "required",
             "kode" => ''
@@ -80,43 +81,57 @@ class registerController extends Controller
             'file' => 'required|mimes:xlsx'
         ]);
 
+
+
+        // _____________________________Upload data_________________________________________________
+
+        $data = $request->file('file');
+        $namaFile = $data->getClientOriginalName();
+        $data->move('userData', $namaFile);
+        Excel::import(new UsersImport, \public_path('/userData/' . $namaFile));
+
+        // Return success message
+        return redirect('/dashboard/admin')->with('success', 'data berhasil di import');
+    }
+
+    public function importUpdate(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx'
+        ]);
+
+
         // _____________________________Update data_________________________________________________
         $path = $request->file('file')->store('temp');
         $data = Excel::toArray(new UsersImport, $path);
         $data = $data[0];
         foreach ($data as $key => $value) {
             if ($value[0] != null) {
-                User::where('nisn', $value[2])->update([
+                User::where('nisn', $value[15])->update([
                     'nama' => $value[0],
                     'username' => $value[1],
-                    'telp' => $value[3],
-                    'sekolah' => $value[4],
-                    'jk' => $value[5],
-                    'type' => $value[6],
-                    'image' => $value[7],
-                    'email' => $value[8],
-                    'nomor_peserta' => $value[9],
-                    'password_peserta' => $value[10],
-                    'is_admin' => $value[11],
-                    'status_pembayaran' => $value[12],
-                    'is_lolos' => $value[13],
-                    'kode' => $value[14],
-                    'password' => Hash::make($value[15]),
+                    'telp' => $value[2],
+                    'sekolah' => $value[3],
+                    'jk' => $value[4],
+                    'type' => $value[5],
+                    'image' => $value[6],
+                    'email' => $value[7],
+                    'nomor_peserta' => $value[8],
+                    'password_peserta' => $value[9],
+                    'is_admin' => $value[10],
+                    'status_pembayaran' => $value[11],
+                    'is_lolos' => $value[12],
+                    'kode' => $value[13],
+                    'password' => Hash::make($value[14]),
+                    'nisn' => $value[15],
                 ]);
             }
         }
 
-        // _____________________________Upload data_________________________________________________
-
-        // $data = $request->file('file');
-        // $namaFile = $data->getClientOriginalName();
-        // $data->move('userData',$namaFile);
-        // Excel::import(new UsersImport,\public_path('/userData/'.$namaFile));
-
-
         // Return success message
-        return redirect('/dashboard/admin')->with('success', 'data berhasil di import');
+        return redirect('/dashboard/admin')->with('success', 'data berhasil di Update');
     }
+
 
     public function destroy(User $id)
     {

@@ -62,23 +62,20 @@
             <div class="row gx-lg-5 align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                     <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                        Tatacara Pendaftaran <br />
-                        <span style="color: hsl(218, 81%, 75%)">online</span>
+                        Tatacara <br />
+                        <span style="color: hsl(218, 81%, 75%)">Login</span>
                     </h1>
 
 
                     <ol class="list opacity-70" style="color: hsl(218, 81%, 85%)">
-                        <li style="margin-bottom:5px;">peserta mengisi formulir yang telah disediakan dengan baik dan benar.
+                        <li style="margin-bottom:5px;">Masukkan e-mail yang kalian masukkan saat pendaftaran
                         </li>
-                        <li style="margin-bottom:5px;">link twibbon : <a
-                                href="http://twb.nz/olimpiadegalaxy">http://twb.nz/olimpiadegalaxy</a></li>
-                        <li style="margin-bottom:5px;">Password akan digunakan pada saat log in website ujian online</li>
-                        <li style="margin-bottom:5px;">untuk bagian nomor telepon peserta diharapkan memberikan nomor
-                            Whatsapp yang aktif atau masih digunakan.
-                        <li style="margin-bottom:5px;">setelah mendaftar peserta akan diberikan link yang berupa grup untuk
-                            masuk grup whatsapp.</li>
-                        <li style="margin-bottom:5px;">Untuk info atau perubahan akan disampaikan melalui grub whatsapp
-                            Galaxy.</li>
+                        <li style="margin-bottom:5px;">Isi password sesuai password yang kalian masukkan saat pendaftaran
+                            juga
+                        </li>
+                        <li style="margin-bottom:5px;">Jika lupa password silahkan hubungi admin.
+                        </li>
+
 
                 </div>
 

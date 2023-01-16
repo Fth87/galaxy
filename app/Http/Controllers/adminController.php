@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Imports\UsersImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
 {
@@ -96,6 +97,7 @@ class adminController extends Controller
         $user->type = $request->type;
         $user->image = $request->image;
         $user->email = $request->email;
+        $user->password = Hash::make($request->password);
         $user->nomor_peserta = $request->nomor_peserta;
         $user->password_peserta = $request->password_peserta;
         $user->is_lolos = $request->is_lolos;

@@ -71,6 +71,7 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->middleware('aut
 Route::resource('dashboard/admin', adminController::class)->middleware('admin');
 Route::get('export/', [registerController::class, 'export'])->middleware('admin');
 Route::post('import', [registerController::class, 'import'])->middleware('admin');
+Route::post('importUpdate', [registerController::class, 'importUpdate'])->middleware('admin');
 Route::delete('destroy/{id}', [registerController::class, 'destroy'])->name('destroy')->middleware('admin');
 
 Route::put('dashboard/admin/verify/{id}', [adminController::class, 'verifyPayment'])->name('dashboard/admin/verify')->middleware('admin');
@@ -85,4 +86,4 @@ Route::get('dashboard/{menu}', function ($menu) {
         'users' => $users
 
     ]);
-});
+})->middleware('auth');
